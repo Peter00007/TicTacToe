@@ -90,29 +90,37 @@ public class GameLogic {
     //check if any of the players has won
     boolean checkWinner() {
         if ((field.getMas()[0] == field.getMas()[1]) && (field.getMas()[1] == field.getMas()[2]) &&
-                (field.getMas()[0] != '-') && (field.getMas()[1] != '-') && (field.getMas()[2] != '-'))
+                (field.getMas()[0] != '-') && (field.getMas()[1] != '-') && (field.getMas()[2] != '-')) {
             return true;
+        }
         if ((field.getMas()[3] == field.getMas()[4]) && (field.getMas()[4] == field.getMas()[5]) &&
-                (field.getMas()[3] != '-') && (field.getMas()[4] != '-') && (field.getMas()[5] != '-'))
+                (field.getMas()[3] != '-') && (field.getMas()[4] != '-') && (field.getMas()[5] != '-')) {
             return true;
+        }
         if ((field.getMas()[6] == field.getMas()[7]) && (field.getMas()[7] == field.getMas()[8]) &&
-                (field.getMas()[6] != '-') && (field.getMas()[7] != '-') && (field.getMas()[8] != '-'))
+                (field.getMas()[6] != '-') && (field.getMas()[7] != '-') && (field.getMas()[8] != '-')) {
             return true;
+        }
         if ((field.getMas()[0] == field.getMas()[3]) && (field.getMas()[3] == field.getMas()[6]) &&
-                (field.getMas()[0] != '-') && (field.getMas()[3] != '-') && (field.getMas()[6] != '-'))
+                (field.getMas()[0] != '-') && (field.getMas()[3] != '-') && (field.getMas()[6] != '-')) {
             return true;
+        }
         if ((field.getMas()[1] == field.getMas()[4]) && (field.getMas()[4] == field.getMas()[7]) &&
-                (field.getMas()[1] != '-') && (field.getMas()[4] != '-') && (field.getMas()[7] != '-'))
+                (field.getMas()[1] != '-') && (field.getMas()[4] != '-') && (field.getMas()[7] != '-')) {
             return true;
+        }
         if ((field.getMas()[2] == field.getMas()[5]) && (field.getMas()[5] == field.getMas()[8]) &&
-                (field.getMas()[2] != '-') && (field.getMas()[5] != '-') && (field.getMas()[8] != '-'))
+                (field.getMas()[2] != '-') && (field.getMas()[5] != '-') && (field.getMas()[8] != '-')) {
             return true;
+        }
         if ((field.getMas()[0] == field.getMas()[4]) && (field.getMas()[4] == field.getMas()[8]) &&
-                (field.getMas()[0] != '-') && (field.getMas()[4] != '-') && (field.getMas()[8] != '-'))
+                (field.getMas()[0] != '-') && (field.getMas()[4] != '-') && (field.getMas()[8] != '-')) {
             return true;
+        }
         if ((field.getMas()[6] == field.getMas()[4]) && (field.getMas()[4] == field.getMas()[2]) &&
-                (field.getMas()[6] != '-') && (field.getMas()[4] != '-') && (field.getMas()[2] != '-'))
+                (field.getMas()[6] != '-') && (field.getMas()[4] != '-') && (field.getMas()[2] != '-')) {
             return true;
+        }
         return false;
     }
 
