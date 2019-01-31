@@ -2,8 +2,10 @@ package main.java.com.tictactoe;
 
 
 public class Field {
-    private char mas[] = {'-', '-', '-', '-', '-', '-', '-', '-', '-'};
-
+    private char mas[];
+    Field() {
+        mas = new char[]{'-', '-', '-', '-', '-', '-', '-', '-', '-'};
+    }
     public char[] getMas() {
         return mas;
     }

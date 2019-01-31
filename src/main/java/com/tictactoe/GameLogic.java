@@ -8,7 +8,7 @@ public class GameLogic {
     Scanner in = new Scanner(System.in);
     private final char COMPUTER = 'O';
     private final char USER = 'X';
-    static final String masOfChar[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    static final String validInputChars[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
     private final String choiceFirstMove = "Хто ходитиме першим: Ви(натисніть 1) чи Комп'ютер(натисніть 2)?";
     private final String winUser = "Переміг гравець";
     private final String winComp = "Переміг компютер";
@@ -54,23 +54,25 @@ public class GameLogic {
     boolean checkValid() {
         validInputValues = in.next();
         flag = false;
-        for (int i = 0; i < masOfChar.length; i++) {
-            flag = new String(validInputValues).equals(masOfChar[i]);
-            if (flag)
+        for (int i = 0; i < validInputChars.length; i++) {
+            flag = new String(validInputValues).equals(validInputChars[i]);
+            if (flag) {
                 break;
+            }
         }
-        if (flag)
+        if (flag) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
 
     //validation check for data entry and empty cell
     boolean checkIsEmpty() {
         validInputValues = in.next();
         flag = false;
-        for (int i = 0; i < masOfChar.length; i++) {
-            flag = new String(validInputValues).equals(masOfChar[i]);
+        for (int i = 0; i < validInputChars.length; i++) {
+            flag = new String(validInputValues).equals(validInputChars[i]);
             if (flag) {
                 cell = Integer.parseInt(validInputValues);
                 break;
@@ -81,8 +83,8 @@ public class GameLogic {
                 return true;
             }
             return false;
-        } else
-            return false;
+        }
+        return false;
     }
 
     //check if any of the players has won
@@ -111,8 +113,7 @@ public class GameLogic {
         if ((field.getMas()[6] == field.getMas()[4]) && (field.getMas()[4] == field.getMas()[2]) &&
                 (field.getMas()[6] != '-') && (field.getMas()[4] != '-') && (field.getMas()[2] != '-'))
             return true;
-        else
-            return false;
+        return false;
     }
 
     //method with start of game
@@ -140,8 +141,9 @@ public class GameLogic {
                         checkCell = -1;
                         if (checkIsEmpty()) {
                             checkCell = Integer.parseInt(validInputValues);
-                        } else
+                        } else {
                             System.out.println(incorrectlyEnteredData);
+                        }
                     } while (checkCell < 0);
                     field.getMas()[checkCell - 1] = USER;
                     //Checking for the end of the game
@@ -187,8 +189,9 @@ public class GameLogic {
                         checkCell = -1;
                         if (checkIsEmpty()) {
                             checkCell = Integer.parseInt(validInputValues);
-                        } else
+                        } else {
                             System.out.println(incorrectlyEnteredData);
+                        }
                     } while (checkCell < 0);
                     field.getMas()[checkCell - 1] = USER;
                     if (checkWinner()) {
